@@ -6,3 +6,4 @@
 !utils/modules/*
 !utils/filter/*
 !utils/page/index.js
+!update.config.json

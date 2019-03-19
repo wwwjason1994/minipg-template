@@ -1,0 +1,11 @@
+{
+    "needUpdateFiles": [
+        ".editorconfig",
+        "model/",
+        "utils/ald/",
+        "utils/tools/",
+        "utils/modules/",
+        "utils/filter/",
+        "utils/page/index.j"
+    ]
+}
