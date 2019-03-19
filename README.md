@@ -3,7 +3,7 @@
 ## 1. 目录结构说明
 
 ```
-├── components (公共小程序组件目录)
+├── components (公共小程序组件目录)
 │   ├── @anima (动画相关组件目录)
 │   ├── @common-view（不涉及特定样式的公用组件，一般可以可以用到别的小程序）
 │   │   ├── formid-view（formid埋点）
@@ -12,13 +12,13 @@
 │   │   └── share-canvas（生产canvas分享图组件）
 │   └── ...
 ├── images（公用图片资源）
-├── pages（主包目录）
+├── pages（主包目录）
 ├── style（公用样式目录）
-├── subpackages（分包目录）
-│   └── blue-diamond-star（分包根目录）
-│        ├── components（分包用到的公共组件）
-│        ├── images（分包图片资源）
-│        └── pages（分包页面目录）
+├── subpackages（分包目录）
+│   └── blue-diamond-star（分包根目录）
+│        ├── components（分包用到的公共组件）
+│        ├── images（分包图片资源）
+│        └── pages（分包页面目录）
 ├── utils（公共模块）
 │   ├── ald（阿拉丁统计）
 │   ├── api（接口相关模块）
@@ -39,7 +39,7 @@
 
 ## 2. 文件命名规范
 
-### 小程序组件（components）
+### 小程序组件（components）
 
 ```
 ├── components
@@ -61,7 +61,7 @@
 2. 其他目录为一般公共组件目录
 3. 组件目录下统一用 `index` 命名
 
-### 页面（pages）
+### 页面（pages）
 
 ```
 ├── pages
@@ -70,7 +70,7 @@
 │       ├── index.json
 │       ├── index.wxml
 │       └── index.wxss
-├── subpackages（分包目录）
+├── subpackages（分包目录）
 │   └── blue-diamond-star
 │        └── pages
 │            └── home
@@ -116,8 +116,8 @@ export default {
 }
 ```
 
-* request.secret 接口验签秘钥
-* request.origin 接口请求域名
+* request.secret 接口验签秘钥
+* request.origin 接口请求域名
 
 
 > `utils/localConfig.js` 本地接口配置，会覆盖config.js和ms.config.js内的配置,用于测试环境，已经加入.gitgnore，正式环境另外clone仓库上传就不会有localConfig.js
@@ -157,7 +157,7 @@ RouteTool|获取当前页面路由信息工具类
 
 以后有新的工具函数加入请请更新文档
 
-### precision.js
+### precision.js
 
 浮点数运算相关函数
 
