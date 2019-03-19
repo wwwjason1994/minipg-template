@@ -1,0 +1,6 @@
+/* components/@action/vip-status/index.wxss */
+.icon {
+    width: 46rpx;
+    height: 36rpx;
+    vertical-align: -5rpx;
+}

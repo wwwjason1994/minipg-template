@@ -1,0 +1,13 @@
+<!--components/bottom-picker/index.wxml-->
+<view class="picker-container {{isShow?'show':''}}">
+    <view class="opacity-bg" bindtap="hide"></view>
+    <view class="picker-bar">
+        <view 
+            wx:for="{{options}}" 
+            class="picker-btn selection-item" 
+            wx:key="{{index}}">
+                <button id="{{item.id}}" open-type="{{item.openType}}" bindtap="selectedItem">{{item.label}}</button>
+            </view>
+        <view bindtap="hide" class="picker-btn btn-cancel">取消</view>
+    </view>
+</view>

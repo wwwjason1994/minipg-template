@@ -1,0 +1,42 @@
+/* 通用按钮 */
+.theme-button {
+    /* default size */
+    width: 140rpx;
+    height: 48rpx;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #66a6ff;
+    color: #66a6ff;
+    background: #fff;
+    font-size: 28rpx;
+    font-weight: 300;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0;
+}
+
+.theme-button,
+.theme-button.active,
+.theme-button.disable {
+    border-radius: 100rpx;
+}
+
+.theme-button.active {
+    border: none;
+    color: #fff;
+    background: #66a6ff;
+    background-image: linear-gradient(135deg,
+        #89f7fe 0%,
+        #66a6ff 100%),
+        linear-gradient(#5f53ff,
+        #5f53ff);
+}
+
+/* TODO: 禁用的色调待替换 */
+.theme-button.disable {
+    border: none;
+    background: #ffc9d7;
+    color: #fff;
+}

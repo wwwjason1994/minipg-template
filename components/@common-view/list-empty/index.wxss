@@ -1,0 +1,41 @@
+/* components/@common-view/list-empty/index.wxss */
+/* 空列表 */
+.list-empty-box {
+    padding-top: 300rpx;
+    text-align: center;
+    line-height: 1;
+}
+
+.empty-icon {
+    width: 184rpx;
+    height: 184rpx;
+}
+
+.empty-text {
+    display: block;
+    font-size: 28rpx;
+    color: #999;
+    text-align: center;
+    /* margin-top: 20rpx; */
+    white-space: pre-wrap;
+    line-height: 2;
+}
+
+.button {
+    width: 360rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    margin: 40rpx auto 0;
+    font-size: 30rpx;
+    color: #ffffff;
+    background-image: linear-gradient(135deg,
+        #89f7fe 0%,
+        #66a6ff 100%),
+        linear-gradient(#000000,
+        #000000);
+    border-radius: 44rpx;
+}
+
+.button:after {
+    border: none;
+}

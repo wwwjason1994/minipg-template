@@ -1,0 +1,7 @@
+<!--pages/user/componments/dialog/index.wxml-->
+<view class="dialog-wrap" wx:if="{{showModel}}">
+    <view class="dialog-mask" bindtap="hide"></view>
+    <view class="dialog">
+        <slot></slot>
+    </view>
+</view>

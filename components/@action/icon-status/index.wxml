@@ -1,0 +1,2 @@
+<!-- components/@action/vip-status/index.wxml -->
+<image class="icon ext-class" src="{{ action?iconPath:iconDisPath }}" mode="aspectFit" />

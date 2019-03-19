@@ -1,0 +1,13 @@
+.DS_Store
+prokect.config.json
+package-lock.json
+node_modules/
+.vscode/
+.code/
+.cache/
+dist/
+project.config.json
+utils/localConfig.js
+utils/msad/localConfig.js
+
+typings/

@@ -1,0 +1,5 @@
+<!--formid-view.wxml-->
+<form class="formid--container" report-submit="{{true}}" bindsubmit="formSubmit" style="{{_style}}">
+    <button class="formid--button" id="{{buttonid}}" formType="{{formType}}" bindgetphonenumber="getphonenumber" open-type="{{gotUserInfo?'getUserInfo': openType}}" bindgetuserinfo="onGotUserInfo"></button>
+</form>
+<slot></slot>

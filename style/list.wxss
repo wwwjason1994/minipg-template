@@ -1,0 +1,11 @@
+@import './row.wxss';
+
+page {
+    background-color: #fff;
+}
+
+.container {
+    font-size: 30rpx;
+    margin-top: 23rpx;
+    background: #fff;
+}

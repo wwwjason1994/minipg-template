@@ -1,0 +1,65 @@
+/* components/bottom-picker/index.wxss */
+
+.picker-container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    font-size: 30rpx;
+    display: none;
+}
+.opacity-bg{
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 100%;
+}
+.picker-container.show{
+    display: block;
+}
+@keyframes move{
+    from{
+        transform: translateY(100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+.picker-bar{
+    background-color: #f4f4f4;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    animation: move 0.2s ease-out;
+}
+.picker-btn{
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+}
+.picker-btn:hover{
+    background-color: rgba(250, 250, 250, 0.2);
+}
+.picker-btn:visited{
+    background-color: #fff;
+}
+.selection-item button{
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    font-size: 30rpx;
+}
+.selection-item button::after{
+    border: none;
+}
+.selection-item+.selection-item{
+    border-top: 1rpx solid #e0e0e0;
+}
+.btn-cancel{
+    margin-top: 10rpx;
+}

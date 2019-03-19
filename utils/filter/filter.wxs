@@ -1,0 +1,79 @@
+
+// 格式化蓝钻
+var diamondFormat = function(num,unit) {
+    unit = unit || 1000000;
+    var result = (num/unit);
+    return result.toFixed(6) * 1;
+}
+// 数字转亿
+var numberToBillion = function(n,digit=3,unit='亿'){
+    var num = n * 1
+    if(typeof num === 'number'){
+        if(isFinite(num)){
+            var result = (num/100000000)
+            return result.toFixed(digit) * 1 + unit;
+        }else{
+            return num.toFixed(digit) * 1;
+        }
+    }
+}
+// 数字转万
+var numberToTenThousand = function(n,digit=2,unit='w',billion={digit:3,unit:'亿'}){
+    var num = n * 1
+    if(isFinite(num)){
+        if(num >= 100000000){
+            var result = numberToBillion(num,billion.digit,billion.unit)
+            return result
+        }else if(num >= 10000){
+            var result = (num/10000)
+            return result.toFixed(digit) * 1 + unit;
+        }else if(num <= -10000){
+            var result = -(num/10000)
+            return result.toFixed(digit) * -1 + unit;
+        }else {
+            return num.toFixed(digit) * 1;
+        }
+    }
+}
+// 分割数值
+var intervalNum = function(n,digit=2,interval=','){
+    var num = n * 1
+    if(isFinite(num)){
+        var arr=num.toFixed(digit).split('.')
+
+        var t1=arr[0].toString().split('');
+        var t2= arr[1] > 0 ? '.' + arr[1].toString() : '';
+        var result=[],counter=0;
+        for(var i=t1.length-1;i>=0;i--){
+            counter++;
+            result.unshift(t1[i]);
+            if((counter%3)==0&&i!=0)
+            {
+                result.unshift(interval);
+            }
+        }
+        var t3=result.join('')
+        var t4=t3 + t2
+        return t4
+    }else{
+        return 0
+    }
+}
+
+// 百分比
+function percent(n,digit=2,retain=2){
+    var num = n * 1
+    if(isFinite(num)){
+        num = ((num * 100).toFixed(digit) * 1).toFixed(retain) + '%'
+        return num
+    }else{
+        return n
+    }
+}
+module.exports = {
+    diamondFormat: diamondFormat,
+    numberToTenThousand: numberToTenThousand,
+    numberToBillion: numberToBillion,
+    intervalNum: intervalNum,
+    percent: percent
+}

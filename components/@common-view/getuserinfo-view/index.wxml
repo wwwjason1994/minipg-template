@@ -1,0 +1,5 @@
+<!--授权组件-->
+<form report-submit="{{true}}" bindsubmit="formSubmit" class="getuserinfo-view-container">
+    <button class="login-button" formType="{{formType}}" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo"></button>
+</form>
+<slot></slot>

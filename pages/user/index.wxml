@@ -1,0 +1,92 @@
+<!-- pages/user/index.wxml -->
+<image class="bg" src="/images/user-centre/bg.png" />
+<view class="container">
+    <view class="head-area-container">
+        <image class="my-avatar" src="{{ userInfo.avatar }}"></image>
+        <view class="my-name">{{ userInfo.nickname }}</view>
+        <formid-view class="sign-warp {{userInfo.vip?'active':''}}" bindtap="gotoRecharge">
+            <icon-status action="{{ userInfo.vip }}" />
+            {{userInfo.vip?'尊贵的会员':'未开通会员'}}
+            <view class="corner">{{userInfo.vip?'续费':'开通'}}</view>
+        </formid-view>
+        <view class="vip-tips" wx:if="{{vipInfo.text}}">{{vipInfo.text}}</view>
+        <view class="tips">
+            如需投放达人，请联系我们媒体顾问，
+            <text class="link" bindtap="contactConsultant">联系顾问>></text>
+        </view>
+    </view>
+    <view class="feature-container" bindtap="gotoShare">
+        <block wx:if="{{userInfo.vip}}">
+            <view class="column">
+                <view class="feature-title">支持一下KOL星球</view>
+                <view class="feature-subtitle">如果KOL星球好用的话可以推荐给朋友啊</view>
+            </view>
+            <view class="blue-button">
+                支持一下
+            </view>
+        </block>
+        <block wx:else>
+            <view class="column">
+                <view class="feature-title">使用会员特权一天({{filter.testTimes(userInfo.invite_times)}}/1每周)</view>
+                <view class="feature-subtitle">每周最多一天，周日晚上23:59结束</view>
+            </view>
+            <view class="blue-button" data-times="{{userInfo.test_times}}" catch:tap="receiveTestTimes">
+                {{filter.testTimesBtn(userInfo.test_times)}}
+            </view>
+        </block>
+    </view>
+    <view class="title-wrap">
+        <text class="title">我的订阅</text>
+        <text class="desc">（会员特权功能）</text>
+    </view>
+
+    <kol-list-item
+        wx:for="{{subscribeList}}"
+        wx:key="item.star_id"
+        id="{{item.star_id}}"
+        item="{{item}}"
+        index="{{3}}"
+        data-id="{{item.star_id}}"
+        bindtap="toKolDetail"
+    />
+    <v-empty wx:if="{{!subscribeList.length}}" paddingTop="110"  emptyText="您还没有订阅达人噢！" />
+</view>
+<dialog-base id="dialog">
+    <view class="dialog-inner">
+        <view>iOS用户暂不支持充值会员</view>
+        <view>关注公众号联系我们了解更多达人信息</view>
+        <view>关键词"了解更多"已复制</view>
+        <!-- <view>关键词"<text style="font-weight:bold">了解更多</text>"已复制</view> -->
+        <view>点击下面按钮在客服中粘贴发送！</view>
+        <button class="dialog-btn" open-type="contact" bindtap="copyText">联系客服</button>
+    </view>
+</dialog-base>
+<dialog-customer-service id="dialogCs" />
+
+<wxs module="filter">
+var testTimes = function(count) {
+    // 0, -1, undefined 重置为 0
+    return  count && ~count ? count : 0
+}
+var testTimesBtn = function(count) {
+    // 0, -1, undefined 重置为 0
+    if (!count) return '获取特权';
+    if (!~count) return '本周已完成';
+
+    return  '+' + count + '天';
+}
+var formatSex = function(type) {
+    switch (type*1) {
+        case 1:
+            return '♂'
+        case 2:
+            return '♀'
+    }
+}
+
+module.exports = {
+    testTimes: testTimes,
+    testTimesBtn: testTimesBtn,
+    formatSex: formatSex,
+}
+</wxs>
