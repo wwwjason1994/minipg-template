@@ -1,8 +1,0 @@
-{
-    "navigationBarTitleText": "我的",
-    "navigationBarBackgroundColor": "#66a6ff",
-    "backgroundColor": "#66a6ff",
-    "usingComponents": {
-        "formid-view": "/components/@common-view/formid-view/index"
-    }
-}

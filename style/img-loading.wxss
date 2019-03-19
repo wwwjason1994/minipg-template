@@ -1,7 +1,0 @@
-image.idol-img-loading{
-    background-color: #ededed;
-    background-image: url('');
-    background-size: 96rpx 89rpx;
-    background-position: center center;
-    background-repeat: no-repeat;
-}

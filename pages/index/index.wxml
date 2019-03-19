@@ -1,4 +1,0 @@
-<!--pages/index/index.wxml-->
-<wxs src="../../utils/filter/filter.wxs" module="filter" />
-<view class="container">
-</view>

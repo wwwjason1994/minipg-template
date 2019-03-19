@@ -1,2 +1,0 @@
-<!--components/share-canvas/index.wxml-->
-<canvas id="share_canvas" canvas-id="share_canvas" style="width: {{width}}rpx;height:{{height}}rpx"></canvas>

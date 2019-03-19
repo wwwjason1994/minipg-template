@@ -1,8 +1,0 @@
-<!-- 空列表展示 -->
-<view class="list-empty-box" style="padding-top: {{paddingTop}}rpx;">
-    <image class="empty-icon" src="/images/common/icon-loading.png"></image>
-    <text class="empty-text">{{emptyText}}</text>
-    <button wx:if="{{btnText}}" class="button ext-button" hover-class="none" open-type="{{openType}}" bindtap="onTapping">
-        {{btnText}}
-    </button>
-</view>

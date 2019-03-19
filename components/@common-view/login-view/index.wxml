@@ -1,9 +1,0 @@
-<view class="login-view-container">
-    <form report-submit="{{true}}" bindsubmit="getFormId" class="getuserinfo-view">
-        <button class="login-button" wx:if="{{!hadAuth}}" formType="submit" open-type="getUserInfo" bindgetuserinfo="authLogin">
-        </button>
-        <button class="login-button" wx:else formType="submit" bindtap="sendFormId">
-        </button>
-    </form>
-    <slot></slot>
-</view>
