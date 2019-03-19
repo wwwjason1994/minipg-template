@@ -1,9 +1,7 @@
-const ald = require('./utils/ald/ald-stat.js');
+// const ald = require('./utils/ald/ald-stat.js');
 
 import Bus from './model/event-bus.js'
 import { userLogin } from './utils/api/login'
-import API from './utils/api/list'
-import config from './utils/config'
 
 App({
     globalData: {
@@ -99,37 +97,13 @@ App({
 
         this.getSetting();
         this.getWindowSize();
-        this.getVersionConfig();
         this.eventBus = new Bus();
     },
     onShow(options) {
         this.globalData.scene = options.scene
     },
-    getVersionConfig(){
-        let localVer = config.version;
-        return new Promise((reslove,reject)=>{
-            if(this.globalData.versionConfig) return reslove(this.globalData.versionConfig);
-            API.getVersionConfig({
-                data:{
-                    key:'version'
-                }
-            }).then(res=>{
-                let ver = res.data.version||'';
-                let isReviewVersion = ver.trim() === localVer.trim();
-                this.globalData.versionConfig = {
-                    localVersion: localVer,
-                    data: res.data,
-                    isReviewVersion
-                }
-                reslove(this.globalData.versionConfig);
-            }).catch(err=>{
-                reject(err);
-            });
-        })
-    },
     /**
-     *登录
-     *
+     * 登录
      * @param {*} [{type = '', extraData = {}}={}] type: 登录类型,普通登录不传, extraData: 非普通登录额外传的数据
      * @returns
      */

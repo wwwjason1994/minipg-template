@@ -1,4 +1,4 @@
-#小程序工程模板
+# 小程序工程模板
 
 ## 1. 目录结构说明
 
@@ -311,6 +311,7 @@ createComp({
 其余能力和使用方式和westore官方文档一致
 
 > 注意：因为对Page()进行了二次封装，Onload等钩子函数有第二个回调参数，所以对westore的源码（`utils/modules/westore/create.js`）进行了些许修改，所以更新westore的时候需要注意
+
 ```js
 43|  onLoad && onLoad.call(this, e)
 50|  onUnload && onUnload.call(this, e)
@@ -328,13 +329,3 @@ createComp({
     ]
 }
 ```
-
-## 7. 骗审处理
-
-app.js 有获取后端当前审核版本的接口回调函数 `getVersionConfig`
-
-后端返回版本号和 `utils/config.js`的`version`版本号一致时说明当前是审核版本
-
-`then(res)` 里面有 `res.isReviewVersion` 字段返回当前是否审核版本
-
-需要骗的页面可以通过这个字段进行判断处理

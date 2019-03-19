@@ -80,12 +80,14 @@ class shareMessage {
      * @param { Object } options.path - 分享路径
      * @param { Object } options.title - 分享路径
      * @param { Object } options.imageUrl - 分享图, 自定义图片路径 为'none'时用默认截图
-     * @param { Object } options.task_type - 分享任务type
-     * @param { Boolean } options.share - 是否分享
+     * @param { Boolean } options.invite - 是否邀新
      * @return { Object } 自定义转发内容
      * @memberof shareMessage
      */
     getShareMessage(options = {}) {
+        let definePath = `pages/index/index`; // 默认分享路径
+        let defineTitle = ``;// 默认标题
+
         let shareMessage = this.getTargetTypeShareInfo(options.type || 1) || {};
 
         if (this.initHadErr) {
@@ -96,10 +98,7 @@ class shareMessage {
         const uid = user_id || wx.getStorageSync("uid") || '';
 
         // 右上角分享默认会带上拉新任务的参数
-        let definePath = `pages/index/index`;
-        let defineTitle = `默认分享标题`;
-        options.share && uid && (definePath += (definePath.indexOf('?') >= 0 ? '&' : '?') + 'source=' + encodeURIComponent(uid));
-        options.task_type && (definePath += (definePath.indexOf('?') >= 0 ? '&' : '?') + 'task_type=' + encodeURIComponent(options.task_type));
+        options.invite && uid && (definePath += (definePath.indexOf('?') >= 0 ? '&' : '?') + 'source=' + encodeURIComponent(uid));
 
         console.log('definePath', definePath);
 
