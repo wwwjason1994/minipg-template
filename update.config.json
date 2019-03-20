@@ -6,6 +6,7 @@
         "utils/tools/",
         "utils/modules/",
         "utils/filter/",
-        "utils/page/index.j"
+        "utils/page/index.js",
+        "utils/request.js"
     ]
 }
