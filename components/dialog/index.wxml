@@ -1,0 +1,72 @@
+<!-- dialog.wxml -->
+<view class="dialog-modal-container {{hasTitleBg?'headerbg':''}}" wx:if="{{showModal&&!useCoverView}}">
+    <formid-view class="modal-bg" bindtap="hide"></formid-view>
+    <form class="dialog-content" report-submit="{{true}}" bindsubmit="formSubmit">
+        <image class="close" src="/images/common/dialog@cancel.png" wx:if="{{hasCloseButton}}" bindtap="hide" />
+        <view class="dialog-top-headerbg" wx:if="{{hasTitleBg}}">
+            <image class="header-bg" mode="aspectFill" src="/images/ranking-bg.png"></image>
+            <text class="dialog-title">{{title}}</text>
+        </view>
+        <view class="dialog-top" wx:elif="{{title}}">
+            <text class="dialog-title">{{title}}</text>
+        </view>
+        <view class="dialog-content-text {{title?'':'no-title'}}">
+            <view wx:if="{{content}}">{{content}}</view>
+            <slot wx:else></slot>
+        </view>
+        <view class="btn-bar" wx:if="{{hasBtns}}">
+            <formid-view
+                wx:if="{{showCancel}}"
+                class="theme-button cancel-btn"
+                openType="{{ cancelOpenType }}"
+                bindtap="cancelBtn" >
+                <view class="theme-button__inner">
+                    {{cancelText}}
+                </view>
+            </formid-view>
+            <button
+                id="{{confirmBtnId}}"
+                class="theme-button active confirm-btn"
+                open-type="{{ confirmOpenType }}"
+                formType="submit"
+                bindtap="confirmBtn" >
+                {{confirmText}}
+            </button>
+        </view>
+    </form>
+</view>
+<!-- cover-view弹窗 -->
+<!-- ！注意：slot 内的也要用cover-view 而且要设置z-index超过1000 -->
+<cover-view class="cover_view dialog-modal-container {{hasTitleBg?'headerbg':''}}" wx:elif="{{showModal&&useCoverView}}">
+    <cover-view class="modal-bg" bindtap="hide"></cover-view>
+    <cover-view class="dialog-content">
+        <cover-image class="close" src="/images/common/dialog@cancel.png" wx:if="{{hasCloseButton}}" bindtap="hide"></cover-image>
+        <cover-view class="dialog-top-headerbg" wx:if="{{hasTitleBg}}">
+            <cover-image class="header-bg" mode="aspectFill" src="/images/ranking-bg.png"></cover-image>
+            <cover-view class="dialog-title">{{title}}</cover-view>
+        </cover-view>
+        <cover-view class="dialog-top" wx:elif="{{title}}">
+            <cover-view class="dialog-title">{{title}}</cover-view>
+        </cover-view>
+        <cover-view class="dialog-content-text {{title?'':'no-title'}}">
+            <cover-view wx:if="{{content}}">{{content}}</cover-view>
+            <slot wx:else></slot>
+        </cover-view>
+        <cover-view class="btn-bar" wx:if="{{hasBtns}}">
+            <button
+                wx:if="{{showCancel}}"
+                open-type="{{ cancelOpenType }}"
+                class="theme-button cancel-btn"
+                bindtap="cancelBtn" >
+                {{cancelText}}
+            </button>
+            <button
+                id="{{confirmBtnId}}"
+                class="theme-button active confirm-btn"
+                open-type="{{ confirmOpenType }}"
+                bindtap="confirmBtn" >
+                {{confirmText}}
+            </button>
+        </cover-view>
+    </cover-view>
+</cover-view>

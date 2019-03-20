@@ -4,7 +4,6 @@
     "enablePullDownRefresh": true,
     "usingComponents": {
         "formid-view": "/components/@common-view/formid-view/index",
-        "dialog": "/components/dialog/index",
-        "auth-view": "/components/auth-view/index"
+        "dialog": "/components/dialog/index"
     }
 }

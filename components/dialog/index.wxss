@@ -1,0 +1,193 @@
+/* dialog.wxss */
+@import '/style/theme-button.wxss';
+
+.dialog-modal-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+.dialog-content{
+    position: relative;
+    z-index: 10;
+    width: 562rpx;
+    /* min-height: 355rpx; */
+    background: #fff;
+    border-radius: 24rpx;
+    /* overflow: hidden; */
+    padding-bottom: 30rpx;
+    box-sizing: border-box;
+    overflow: visible;
+}
+.dialog-top{
+    width: 100%;
+    height: 94rpx;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+.dialog-top .dialog-title{
+    font-size: 34rpx;
+    color: #333;
+    z-index: 10;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    /* border-bottom: #9f9ea4 solid 1rpx; */
+    height: 100%;
+    line-height: 94rpx;
+    box-sizing:border-box;
+    padding-top: 20rpx;
+}
+/* 带背景的标题 */
+.dialog-top-headerbg{
+    width: 100%;
+    height: 150rpx;
+    position: relative;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34rpx;
+    font-weight: 400;
+    border-radius: 24rpx 24rpx 0 0;
+    overflow: hidden;
+}
+.dialog-top-headerbg .header-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+.dialog-content-text{
+    width: 100%;
+    min-height: 150rpx;
+    padding: 30rpx 22rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    color: #999999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.dialog-content-text.no-title{
+    padding-top: 40rpx;
+    padding-bottom: 40rpx;
+    min-height: 206rpx;
+    align-items: center;
+}
+.headerbg .dialog-content-text{
+    font-size: 26rpx;
+}
+.dialog-content-text view,
+.dialog-content-text cover-view{
+    line-height: 1.8;
+    white-space: pre-line;
+    width: 100%;
+    text-align: center;
+}
+.dialog-content-text view:last-child,
+.dialog-content-text cover-view:last-child{
+    margin-bottom: 0;
+}
+.btn-bar{
+    width: 480rpx;
+    height: 80rpx;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cancel-btn{
+    height: 100%;
+    flex: 1;
+    /* padding: 1px;
+    background: linear-gradient(to right, #b11b73, #351949);
+    box-sizing: border-box;
+    overflow: hidden; */
+}
+/* .cancel-btn-content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28rpx;
+    color: #351949;
+    border-radius: 100px;
+    background-color: #fff;
+    z-index: 100;
+    position: relative;
+}
+.cancel-btn-content text{
+    color: #351949;
+    background: linear-gradient(to right, #b11b73, #351949);
+    -webkit-background-clip: text;
+    color: transparent;
+} */
+
+.confirm-btn{
+    display: flex;
+    flex: 1;
+    height: 100%;
+    margin: 0 auto;
+}
+.cancel-btn+.confirm-btn{
+    margin-left: 40rpx;
+}
+button::after{
+    border: none;
+}
+
+.close {
+    position: absolute;
+    width: 53rpx;
+    height: 53rpx;
+    bottom: 104%;
+    right: 0;
+}
+/* cover-view */
+cover-view {
+    position: initial;
+    left: auto;
+    top: auto;
+}
+
+.cover_view button {
+    text-align: center;
+}
+.cover_view button wx-cover-view {
+    border: none;
+    width: 100%;
+    height: 100%;
+    line-height: 78rpx;
+}
+.cover_view .confirm-btn wx-cover-view{
+    background: #66a6ff;
+    background-image: linear-gradient(135deg,
+		#89f7fe 0%,
+		#66a6ff 100%);
+}

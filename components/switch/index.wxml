@@ -1,0 +1,3 @@
+<formid-view class="radio-button {{checked ? 'on' : 'off'}}" bindtap="handleTap">
+    <view class="radio-button__inner"></view>
+</formid-view>

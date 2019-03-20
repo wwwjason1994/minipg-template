@@ -1,0 +1,38 @@
+
+.radio-button {
+    position: relative;
+    width: 100rpx;
+    height: 48rpx;
+    /* border: 1rpx solid #ededed; */
+    border-radius: 60rpx;
+    transition: background-color .4s ease;
+}
+
+.radio-button .radio-button__inner {
+    box-sizing: border-box;
+    position: absolute;
+    width: 48rpx;
+    height: 48rpx;
+    top: 0;
+    border-radius: 50%;
+    border: 2rpx solid #ededed;
+    background-color: #fff;
+    transition: left .4s ease;
+}
+
+.radio-button.off {
+    background-color: #ededed;
+}
+
+.radio-button.on {
+    background-color: #ef466d;
+    border-color: #ef466d;
+}
+
+.radio-button.off .radio-button__inner {
+    left: 1rpx;
+}
+
+.radio-button.on .radio-button__inner {
+    left: 51rpx;
+}

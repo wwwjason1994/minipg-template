@@ -26,7 +26,7 @@ class shareMessage {
     constructor() {
         this.shareMessageList = null;
         this.initHadErr = false;
-        this.init();
+        // this.init();
     }
 
     /**
